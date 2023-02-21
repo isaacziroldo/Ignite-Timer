@@ -1,20 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import { Button } from './components/Button'
+import { ThemeProvider } from 'styled-components'
 
+import { Button } from './components/Button'
+import { GlobalStyle } from './styles/global'
+import { defaultTheme } from './styles/themes/default'
 
 export function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      
-      <Button variant='primary'/>
-      <Button variant='secondary'/>
-      <Button variant='danger'/>
-      <Button variant='success'/>
-      <Button />
+      <ThemeProvider theme={defaultTheme}>
+        <Button variant="primary" />
+        <Button variant="secondary" />
+        <Button variant="danger" />
+        <Button variant="success" />
+        <Button />
+
+        <GlobalStyle />
+      </ThemeProvider>
     </div>
   )
 }
-
